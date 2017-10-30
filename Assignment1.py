@@ -1,4 +1,4 @@
-Freda Osei 401 Assignment 1
+#Freda Osei 401 Assignment 1
 def flatten(List):
     final = []
     for each_list in List:

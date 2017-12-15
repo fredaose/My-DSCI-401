@@ -64,6 +64,17 @@ dtree_entropy_mod.fit(x_train, y_train)
 preds_entropy = dtree_entropy_mod.predict(x_test)
 print_multiclass_classif_error_report(y_test, preds_entropy)
 
+# Accuracy: 0.0125
+
+# Confusion Matrix:
+# [[0 0 0 ..., 0 0 0]
+#  [0 0 0 ..., 0 0 0]
+#  [0 0 0 ..., 0 0 0]
+#  ..., 
+#  [0 0 0 ..., 0 0 0]
+#  [0 0 0 ..., 0 0 0]
+#  [0 0 0 ..., 0 0 0]]
+
 
 print('\n -----------------Logistic model -------------------------------')
 # Build the model.

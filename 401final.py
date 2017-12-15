@@ -76,37 +76,6 @@ print_multiclass_classif_error_report(y_test, preds_entropy)
 #  [0 0 0 ..., 0 0 0]]
 
 
-print('\n -----------------Logistic model -------------------------------')
-# Build the model.
-log_mod = linear_model.LogisticRegression()
-log_mod.fit(x_train, y_train)
-
-# Make predictions - both class labels and predicted probabilities.
-preds = log_mod.predict(x_test)
-pred_probs = log_mod.predict_proba(x_test)
-prob_pos = pred_probs.transpose()[1]  # P(X = 1) is column 1
-prob_neg = pred_probs.transpose()[0]  # P(X = 0) is column 0
-
- pred_df = pd.DataFrame({'Actual':y_test, 'Predicted Class':preds, 'P(1)':prob
-     ...: _pos, 'P(0)':prob_neg})
-     ...: print(pred_df.head(15))
-     ...: 
-#      Actual      P(0)          P(1)  Predicted Class
-# 283  155865  0.024452  4.947671e-08           111350
-# 361  109646  0.004043  1.222835e-05           105000
-# 336   98053  0.002531  1.643716e-07           105000
-# 64    68404  0.003308  4.257298e-03            92000
-# 6    175000  0.007397  2.225418e-06           105000
-# 373  136660  0.012668  3.593073e-06           105000
-# 102  153303  0.000704  2.227547e-05           183800
-# 153  103994  0.006679  6.605825e-04           105000
-# 382   86895  0.003856  1.429673e-03            74000
-# 70   126320  0.000094  2.321033e-06           183800
-# 55    83900  0.001243  7.264498e-05           105000
-# 353  138000  0.011910  4.459210e-05           111350
-# 396   81035  0.003017  1.138026e-03            74000
-# 293  104800  0.000399  6.343755e-05           146500
-# 11    79800  0.001839  9.785559e-04            74000
 
 print('\n ----------------------Part 1: Cross Validation with SVM ---------------------')
 mod = svm.SVC(C=2.5)
